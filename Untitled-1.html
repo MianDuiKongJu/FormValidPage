@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS test</title>
+  <style>
+    .main {
+      margin: auto;
+      margin:100px 300px;
+      border: 1px solid lightgray;
+      box-shadow: 2px 2px 5px gray;
+      padding: 30px;
+    }
+    .usernameShort:after { 
+      color: red;
+      content:'username could not shorter than 3 chars'
+    }
+
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="tittle">
+      <h1>Register With Us</h1>
+    </div>
+    <div class="username">
+      <h5>Username</h5>
+      <input type="text" class="usernameClass" name="username" value="username">
+      <p id="usernameError" class=""></p>
+    </div>
+    <div class="email">
+      <h5>Email</h5>
+      <input type="text" class="emailClass" name="email" value="email">
+    </div>
+    <div class="passwordFirst">
+      <h5>Password</h5>
+      <input type="text" class="passwordFirstClass" name="passwordFirst" value="">
+    </div>
+    <div class="passwordSecond">
+      <h5>Confirm Password</h5>
+      <input type="text" class="passwordSecondClass" name="passwordSecond" value="">
+    </div>
+    <div class="button">
+      <button type="button" id="submit">Submit</button>
+    </div>
+  </div>
+  <footer>
+    <script>
+      const usernameValid = ()=> {
+        let usernameGet = document.querySelector('.usernameClass');
+        if(usernameGet.value.length <= 3)
+        {
+          document.getElementById('usernameError').classList.add('usernameShort');
+        }
+      }
+      document.querySelector('#submit').addEventListener('click', usernameValid);
+    </script>
+  </footer>
+</body>
+</html>
